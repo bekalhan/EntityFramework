@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EFCore.Models.Author>
+
+
+<h2>Authors</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Author Name</td>
+            <td>Author Surname</td>
+            <td>Transactions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.AuthorName</td>
+                <td>@author.AuthorSurname</td>
+                <td>
+                    Edit - Delete
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<a asp-action="Create">Add Author</a>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<EFCore.Models.Book>
+
+
+
+<h2>Yazarlar</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Book Name</td>
+            <td>Author Name</td>
+            <td>Transactions</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookName</td>
+                <td>@book.Author.AuthorName</td>
+                <td>
+                    <a asp-action="BookDetail" asp-controller="Book" asp-route-id="@book.BookId">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<a asp-action="Create" asp-controller="Book">Add Book</a>
